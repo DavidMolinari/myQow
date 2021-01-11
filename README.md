@@ -66,6 +66,21 @@ function pingDomain($domain){
 ## 7.	Site responsive 
 
 
+```php
+    ini_set('user_agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.9) Gecko/20071025 Firefox/2.0.0.9');
+    $html = file_get_contents("http://php.net/");
 
+    ini_set('user_agent', 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_0 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Version/4.0.5 Mobile/8A293 Safari/6531.22.7');
+    $html2 = file_get_contents("http://php.net/");
+
+    similar_text(substr($html,0,1000),substr($html2,0,1000), $similariy);
+    echo $similariy."<br>";
+
+
+if($similariy<50)
+        echo "It's responsive";
+else
+        echo "not responsive";
+```
 
 
